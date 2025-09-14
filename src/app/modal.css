@@ -1,0 +1,385 @@
+ #reg_login {
+   z-index: 999;
+   background-color: rgba(0, 0, 0, .24);
+   background-repeat: no-repeat;
+   background-size: cover;
+   justify-content: center;
+   align-items: center;
+   width: 100%;
+   height: 100%;
+   min-height: 100vh;
+   padding: 20px;
+   display: flex;
+   position: fixed;
+   bottom: 50%;
+   right: 50%;
+   transform: translate(50%, 50%);
+   backdrop-filter: blur(3px);
+ }
+
+ #reg_login .container {
+   position: relative;
+   width: 800px;
+   height: 500px;
+   background: #fff;
+   box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+   overflow: hidden;
+ }
+
+ #reg_login .container .user {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   display: flex;
+ }
+
+ #reg_login .container .user .imgBx {
+   position: relative;
+   width: 50%;
+   height: 100%;
+   transition: 0.5s;
+ }
+
+ #reg_login .container .user .imgBx img {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+ }
+
+ #reg_login .container .user .formBx {
+   position: relative;
+   width: 50%;
+   height: 100%;
+   background: #fff;
+   padding: 40px;
+   transition: 0.5s;
+ }
+
+ #reg_login .container .user .formBx form h2 {
+   font-size: 18px;
+   font-weight: 600;
+   text-transform: uppercase;
+   letter-spacing: 2px;
+   text-align: center;
+   width: 100%;
+   margin-bottom: 10px;
+   color: #555;
+ }
+
+ #reg_login .container .user .formBx form input {
+   position: relative;
+   width: 100%;
+   padding: 10px;
+   background: #f5f5f5;
+   color: #333;
+   border: none;
+   outline: none;
+   box-shadow: none;
+   margin: 8px 0;
+   font-size: 14px;
+   letter-spacing: 1px;
+   font-weight: 300;
+ }
+
+ #reg_login .container .user .formBx form input:hover {
+   border: 1px solid #62260dab;
+ }
+
+ #reg_login .container .user .formBx form input[type="submit"] {
+   max-width: 100px;
+   background: #62260dab;
+   color: #fff;
+   cursor: pointer;
+   font-size: 14px;
+   font-weight: 500;
+   letter-spacing: 1px;
+ }
+
+ #reg_login .container .user .formBx form input[type="submit"]:hover {
+   transition: 0.5s;
+   background: #62260d;
+ }
+
+ #reg_login .container .user .formBx form .signup {
+   position: relative;
+   margin-top: 20px;
+   font-size: 12px;
+   letter-spacing: 1px;
+   color: #555;
+   text-transform: uppercase;
+   font-weight: 300;
+ }
+
+ #reg_login .container .user .formBx form .signup a {
+   font-weight: 600;
+   text-decoration: none;
+   color: #62260d;
+ }
+
+ #reg_login .container .signupBx {
+   pointer-events: none;
+ }
+
+ #reg_login .container.active .signupBx {
+   pointer-events: initial;
+ }
+
+ #reg_login .container .signupBx .formBx {
+   left: 100%;
+ }
+
+ #reg_login .container.active .signupBx .formBx {
+   left: 0;
+ }
+
+ #reg_login .container .signupBx .imgBx {
+   left: -100%;
+ }
+
+ #reg_login .container.active .signupBx .imgBx {
+   left: 0%;
+ }
+
+ #reg_login .container .signinBx .formBx {
+   left: 0%;
+ }
+
+ #reg_login .container.active .signinBx .formBx {
+   left: 100%;
+ }
+
+ #reg_login .container .signinBx .imgBx {
+   left: 0%;
+ }
+
+ #reg_login .container.active .signinBx .imgBx {
+   left: -100%;
+ }
+
+ @media (max-width: 991px) {
+   #reg_login .container {
+     max-width: 400px;
+   }
+
+   #reg_login .container .imgBx {
+     display: none;
+   }
+
+   #reg_login .container .user .formBx {
+     width: 100%;
+   }
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ @keyframes fade-in {
+   from {
+     opacity: 0;
+     transform: translateY(-20px);
+   }
+
+   to {
+     opacity: 1;
+     transform: translateY(0);
+   }
+ }
+
+ .animate-fade-in {
+   animation: fade-in 0.8s ease-out forwards;
+ }
+
+ .custom-modal-overlay {
+   background: rgba(0, 0, 0, 0.3);
+   backdrop-filter: blur(8px);
+   z-index: 101;
+ }
+
+ @media (max-width: 700px) {
+   .home-grid-container {
+     grid-template-columns: 1fr;
+     gap: 1.2rem;
+     padding: 2rem 0.5rem;
+   }
+
+   .home-box {
+     padding: 2rem 1rem;
+     font-size: 1rem;
+   }
+
+   .main-nav {
+     flex-direction: column;
+     align-items: flex-start;
+     gap: 1rem;
+     padding: 0.5rem 1rem;
+   }
+
+   .main-header {
+     padding: 0.5rem 0.2rem;
+   }
+ }
+
+ @media (max-width: 992px) {
+   .home-grid-container {
+     grid-template-columns: 1fr 1fr;
+     gap: 1.5rem;
+     padding: 2.5rem 1rem;
+   }
+
+   .home-box {
+     padding: 2.5rem 1.2rem;
+     font-size: 1.05rem;
+   }
+ }
+
+ .blur-header {
+   backdrop-filter: blur(8px);
+   transition: backdrop-filter 0.2s;
+ }
+
+ .modal-blur-wrapper {
+   backdrop-filter: blur(8px);
+   transition: backdrop-filter 0.2s;
+ }
+
+ .password-eye-btn {
+   top: 70%;
+   transform: translateY(-50%);
+ }
+
+ /* Auth Modal Form Styles */
+ .auth-modal-form h2 {
+   font-size: 1.5rem;
+   font-weight: 700;
+   color: #E53935;
+   margin-bottom: 1.5rem;
+ }
+
+ .auth-modal-form form {
+   display: flex;
+   flex-direction: column;
+   gap: 1.25rem;
+ }
+
+ .auth-modal-form input[type="email"],
+ .auth-modal-form input[type="password"],
+ .auth-modal-form input[type="text"],
+ .auth-modal-form input[type="tel"] {
+   width: 100%;
+   padding: 0.75rem 1rem;
+   border-radius: 0;
+   border: 1px solid #e5e7eb;
+   font-size: 1rem;
+   background: #fff;
+   transition: border 0.2s, box-shadow 0.2s;
+ }
+
+ .auth-modal-form input:focus {
+   border: 1.5px solid #E53935;
+   box-shadow: 0 0 0 2px #fed7aa33;
+ }
+
+ .auth-modal-form button[type="submit"] {
+   width: 100%;
+   padding: 0.75rem;
+   border-radius: 0;
+   font-weight: 700;
+   font-size: 1.1rem;
+   border: none;
+   margin-top: 0.5rem;
+   cursor: pointer;
+   transition: background 0.2s;
+ }
+
+ .auth-modal-form button[type="submit"]:hover {
+   background: #b71c1c;
+ }
+
+ .auth-modal-form .password-eye-btn {
+   right: 1rem;
+   top: 50%;
+   transform: translateY(-50%);
+ }
+
+ .auth-modal-form .text-link {
+   color: #E53935;
+   font-weight: 500;
+   text-decoration: underline;
+   cursor: pointer;
+   transition: color 0.18s;
+ }
+
+ .auth-modal-form .text-link:hover {
+   color: #b71c1c;
+ }
+
+ @media (max-width: 700px) {
+   .auth-modal-form h2 {
+     font-size: 1.2rem;
+   }
+
+   .auth-modal-form form {
+     gap: 1rem;
+   }
+ }
+
+ .auth-modal-form *,
+ .auth-modal-form,
+ .custom-modal-overlay,
+ .modal-blur-wrapper,
+ .bg-white,
+ .shadow-2xl {
+   border-radius: 0 !important;
+ }
+
+ @keyframes scale-in {
+   from {
+     opacity: 0;
+     transform: scale(0.7);
+   }
+
+   to {
+     opacity: 1;
+     transform: scale(1);
+   }
+ }
+
+ .scale-in {
+   animation: scale-in 0.35s cubic-bezier(0.4, 0.2, 0.2, 1) forwards;
+ }

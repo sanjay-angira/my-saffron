@@ -1,9 +1,9 @@
 /* Sacred Store - Complete CSS Styles */
-
+@import "tailwindcss";
 /* Reset and Base Styles */
 * {
-  margin: 0;
-  padding: 0;
+  /* margin: 0;
+  padding: 0; */
   box-sizing: border-box;
 }
 
@@ -439,107 +439,19 @@ body {
   text-decoration: line-through;
 }
 
-/* Modal Styles */
-.modal-backdrop {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(5px);
-  z-index: 1000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem;
-  animation: fadeIn 0.3s ease-out;
-}
 
-.modal-content {
-  background: white;
-  border-radius: 0.75rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  width: 100%;
-  max-width: 400px;
-  padding: 2rem;
-  animation: scaleIn 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
 
-.modal-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 1.5rem;
-}
 
-.modal-title {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: var(--brown);
-}
 
-.close-button {
-  background: none;
-  border: none;
-  padding: 0.5rem;
-  cursor: pointer;
-  border-radius: 0.5rem;
-  color: var(--gray-medium);
-  transition: all 0.3s ease;
-}
 
-.close-button:hover {
-  background-color: var(--gray-light);
-}
 
-.form-group {
-  margin-bottom: 1rem;
-}
 
-.form-label {
-  display: block;
-  font-weight: 600;
-  color: var(--brown);
-  margin-bottom: 0.5rem;
-}
 
-.form-input {
-  width: 100%;
-  padding: 0.75rem;
-  border: 1px solid #e0e0e0;
-  border-radius: 0.5rem;
-  font-size: 1rem;
-  transition: all 0.3s ease;
-}
 
-.form-input:focus {
-  outline: none;
-  border-color: var(--saffron-primary);
-  box-shadow: 0 0 0 3px rgba(255, 153, 51, 0.1);
-}
 
-.modal-toggle {
-  text-align: center;
-  margin-top: 1.5rem;
-}
 
-.modal-toggle p {
-  color: var(--gray-medium);
-}
 
-.link-button {
-  background: none;
-  border: none;
-  color: var(--saffron-primary);
-  text-decoration: underline;
-  cursor: pointer;
-  font-size: inherit;
-}
 
-.link-button:hover {
-  color: var(--saffron-dark);
-}
 
 /* Footer */
 .footer {
