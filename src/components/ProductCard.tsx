@@ -1,5 +1,6 @@
 import { Star, ShoppingCart } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 interface ProductCardProps {
   image: string;
@@ -8,23 +9,28 @@ interface ProductCardProps {
   originalPrice?: string;
   rating: number;
   description?: string;
+  id?: string;
 }
 
-const ProductCard = ({ image, title, price, originalPrice, rating, description }: ProductCardProps) => {
+const ProductCard = ({ image, title, price, originalPrice, rating, description, id }: ProductCardProps) => {
   return (
     <div className="product-card">
       <div className="product-image-wrapper">
-        <Image
-          src={image} 
-          alt={title}
-          className="product-image"
-          width={300}
-          height={300}
-        />
+        <Link href={id ? `/product/${id}` : "#"}>
+          <Image
+            src={image} 
+            alt={title}
+            className="product-image"
+            width={300}
+            height={300}
+          />
+        </Link>
       </div>
       
       <div className="product-content">
-        <h3 className="product-title">{title}</h3>
+        <h3 className="product-title">
+          {id ? <Link href={`/product/${id}`}>{title}</Link> : title}
+        </h3>
         
         {description && (
           <p className="product-description">{description}</p>

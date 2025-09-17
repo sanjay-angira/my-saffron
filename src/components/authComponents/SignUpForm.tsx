@@ -54,7 +54,7 @@ export default function SignUpForm() {
 
     return (
         <div className="auth-modal-form">
-            <h2 className="text-xl font-bold text-center tracking-widest text-gray-700 mb-8 uppercase">Create an Account</h2>
+            <h2 className="text-xl font-bold text-center tracking-widest mb-8 uppercase" style={{ color: 'var(--brown)' }}>Create an Account</h2>
             <form onSubmit={formik.handleSubmit} className="flex flex-col">
                 <div className="flex flex-col space-y-2">
                     <input
@@ -104,7 +104,25 @@ export default function SignUpForm() {
                 <button
                     type="submit"
                     disabled={loading}
-                    className="w-full bg-[#8d6e63] text-white font-bold text-[15px] tracking-wide uppercase transition rounded-none px-4 py-3 border-0 shadow-none leading-none mt-4"
+                    className="w-full font-bold text-[15px] tracking-wide uppercase transition rounded-none px-4 py-3 border-0 leading-none mt-4"
+                    style={{
+                        background: loading ? '#ccc' : 'linear-gradient(135deg, var(--saffron-primary), var(--saffron-light))',
+                        color: 'white',
+                        boxShadow: loading ? 'none' : '0 4px 15px var(--shadow)',
+                        cursor: loading ? 'not-allowed' : 'pointer'
+                    }}
+                    onMouseEnter={(e) => {
+                        if (!loading) {
+                            e.currentTarget.style.transform = 'translateY(-2px)';
+                            e.currentTarget.style.boxShadow = '0 8px 25px var(--shadow)';
+                        }
+                    }}
+                    onMouseLeave={(e) => {
+                        if (!loading) {
+                            e.currentTarget.style.transform = 'translateY(0)';
+                            e.currentTarget.style.boxShadow = '0 4px 15px var(--shadow)';
+                        }
+                    }}
                 >
                     {loading ? 'Signing Up...' : 'Sign Up'}
                 </button>
@@ -113,7 +131,8 @@ export default function SignUpForm() {
                 Already have an account ?{' '}
                 <button
                   type="button"
-                  className="font-bold text-[#8d6e63] uppercase underline hover:no-underline ml-1"
+                  className="font-bold uppercase underline hover:no-underline ml-1 transition-colors"
+                  style={{ color: 'var(--saffron-primary)' }}
                   onClick={() => {
                     dispatch(toggleForm());
                 }}

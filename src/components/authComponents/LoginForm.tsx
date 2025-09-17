@@ -1,5 +1,4 @@
 "use client";
-import Link from 'next/link';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { useState } from 'react';
@@ -10,9 +9,7 @@ import { API_ENDPOINTS } from '@/services/api/API_ENDPOINT';
 import { useDispatch } from 'react-redux';
 import { setUser } from '../../services/redux/slices/userSlice';
 import { useRouter } from 'next/navigation';
-import { toggleForm,  } from '../../services/redux/slices/modalSlice';
-import Logo from '././logo';
-import { FiEye, FiEyeOff } from 'react-icons/fi';
+import { toggleForm } from '../../services/redux/slices/modalSlice';
 
 const validationSchema = Yup.object({
     email: Yup.string().email('Invalid email').required('Email is required'),
@@ -74,7 +71,7 @@ export default function LoginForm() {
 
     return (
         <div className="auth-modal-form">
-            <h2 className="text-xl font-bold text-center tracking-widest text-gray-700 mb-8 uppercase">Sign In</h2>
+            <h2 className="text-xl font-bold text-center tracking-widest mb-8 uppercase" style={{ color: 'var(--brown)' }}>Sign In</h2>
             <form onSubmit={formik.handleSubmit} className="space-y-4">
                 <input
                     type="text"
@@ -101,7 +98,25 @@ export default function LoginForm() {
                 <button
                     type="submit"
                     disabled={loading}
-                    className="w-full btn-primary font-bold text-[15px] tracking-wide uppercase transition rounded-none px-4 py-3 border-0 shadow-none leading-none"
+                    className="w-full font-bold text-[15px] tracking-wide uppercase transition rounded-none px-4 py-3 border-0 leading-none"
+                    style={{
+                        background: loading ? '#ccc' : 'linear-gradient(135deg, var(--saffron-primary), var(--saffron-light))',
+                        color: 'white',
+                        boxShadow: loading ? 'none' : '0 4px 15px var(--shadow)',
+                        cursor: loading ? 'not-allowed' : 'pointer'
+                    }}
+                    onMouseEnter={(e) => {
+                        if (!loading) {
+                            e.currentTarget.style.transform = 'translateY(-2px)';
+                            e.currentTarget.style.boxShadow = '0 8px 25px var(--shadow)';
+                        }
+                    }}
+                    onMouseLeave={(e) => {
+                        if (!loading) {
+                            e.currentTarget.style.transform = 'translateY(0)';
+                            e.currentTarget.style.boxShadow = '0 4px 15px var(--shadow)';
+                        }
+                    }}
                 >
                     {loading ? 'Logging in...' : 'Login'}
                 </button>
@@ -110,7 +125,8 @@ export default function LoginForm() {
                 Don&apos;t have an account ?{' '}
                 <button
                     type="button"
-                    className="font-bold text-[#8d6e63] uppercase underline hover:no-underline ml-1"
+                    className="font-bold uppercase underline hover:no-underline ml-1 transition-colors"
+                    style={{ color: 'var(--saffron-primary)' }}
                     onClick={() => {
                         dispatch(toggleForm());
                     }}
