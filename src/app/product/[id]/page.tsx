@@ -1,10 +1,15 @@
-import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Star, ShoppingCart } from "lucide-react";
 import { getProductById, PRODUCTS } from "@/data/products";
 import Accordion, { type AccordionItem } from "@/components/Accordion";
 import ReviewSection from "@/components/ReviewSection";
 import ProductSection from "@/components/ProductSection";
+import ProductImageGallery from "@/components/ProductImageGallery";
+import rudrakshaImg from "@/assets/rudraksha-collection.jpg";
+import sweetsImg from "@/assets/spiritual-sweets.jpg";
+import booksImg from "@/assets/spiritual-books.jpg";
+import rashiImg from "@/assets/rashi-logos.jpg";
+import heroImg from "@/assets/spiritual-hero.jpg";
 
 type PageProps = {
   params: { id: string };
@@ -15,6 +20,16 @@ export default function ProductDetailPage({ params }: PageProps) {
   if (!product) return notFound();
 
   const { title, image, price, originalPrice, rating, description } = product;
+
+  const baseImages = Array.isArray(image) ? image : [image];
+  const fallbackByCategory: Record<string, any[]> = {
+    rudraksha: [rudrakshaImg, heroImg],
+    sweets: [sweetsImg, heroImg],
+    books: [booksImg, heroImg],
+    rashi: [rashiImg, heroImg]
+  };
+  const categoryFallbacks = fallbackByCategory[product.category ?? ""] ?? [heroImg, sweetsImg];
+  const images = baseImages.length > 1 ? baseImages : [baseImages[0], ...categoryFallbacks].slice(0, 3);
 
   const related = PRODUCTS
     .filter(p => p.category === product.category && p.id !== product.id)
@@ -33,13 +48,7 @@ export default function ProductDetailPage({ params }: PageProps) {
     <div className="container" style={{ paddingTop: "2rem", paddingBottom: "3rem" }}>
       <div className="product-detail-grid">
         <div className="product-detail-image">
-          <Image
-            src={typeof image === "string" ? image : (image as any)}
-            alt={title}
-            width={640}
-            height={640}
-            style={{ width: "100%", height: "auto", borderRadius: 12, objectFit: "cover" }}
-          />
+          <ProductImageGallery images={images as any[]} alt={title} />
         </div>
 
         <div className="product-detail-content">
