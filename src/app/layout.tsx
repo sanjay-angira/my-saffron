@@ -5,6 +5,8 @@ import Header from "@/components/headerAndFooter/Header";
 import ReduxProvider from "@/components/ReduxProvider";
 import Footer from "@/components/headerAndFooter/Footer";
 import AuthModals from "@/components/authComponents/AuthModals";
+import ProgressBar from "@/components/utilis/ProgressBar";
+import TopHeader from "@/components/headerAndFooter/TopHeader";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -21,6 +23,8 @@ export default function RootLayout({
 
       <body>
         <ReduxProvider>
+          <ProgressBar />
+          <TopHeader />
           <Header />
           <AuthModals />
           {children}

@@ -1,5 +1,6 @@
 import HeroSection from "@/components/HeroSection";
-import ProductSection from "@/components/ProductSection";
+import ProductSection from "@/components/utilis/ProductSection";
+import ZodiacSection from "@/components/ZodiacSection";
 import rudraksha from "@/assets/rudraksha-collection.jpg";
 import sweets from "@/assets/spiritual-sweets.jpg";
 import books from "@/assets/spiritual-books.jpg";
@@ -189,6 +190,7 @@ const Home = () => {
         viewAllLink="/books"
       />
 
+
       <div style={{ background: 'linear-gradient(180deg, rgba(255, 179, 102, 0.1), rgba(255, 215, 0, 0.3))' }}>
         <ProductSection
           title="Rashi & Zodiac Items"
@@ -197,6 +199,7 @@ const Home = () => {
           viewAllLink="/rashi"
         />
       </div>
+      <ZodiacSection />
     </div>
   );
 };

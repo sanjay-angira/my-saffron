@@ -1,4 +1,6 @@
-import ProductCard from "./ProductCard";
+import ProductCard from "@/components/ProductCard/ProductCard";
+import ProductSectionHeading from "./ProductSectionTopHeadings";
+import ProductCardSection from "./ProductCardSection";
 
 interface Product {
   id: string;
@@ -21,19 +23,13 @@ const ProductSection = ({ title, subtitle, products, viewAllLink }: ProductSecti
   return (
     <section className="products-section">
       <div className="container">
-        <div className="section-header">
-          <h2 className="section-title">{title}</h2>
-          {subtitle && (
-            <p className="section-subtitle">{subtitle}</p>
-          )}
-        </div>
-        
-        <div className="products-grid">
-          {products.map((product) => (
-            <ProductCard key={product.id} {...product} />
-          ))}
-        </div>
-        
+        <ProductSectionHeading
+          title={title}
+          subtitle={subtitle}
+        />
+        <ProductCardSection
+          products={products}
+        />
         {viewAllLink && (
           <div className="text-center">
             <button className="btn btn-outline btn-lg">
