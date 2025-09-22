@@ -27,7 +27,7 @@ const ZodiacSection = () => {
         </div>
 
         {/* ✅ Use Tailwind grid system */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-6 lg:grid-cols-6 gap-6 mb-12">
           {zodiacSigns.map((sign) => (
             <div
               key={sign}

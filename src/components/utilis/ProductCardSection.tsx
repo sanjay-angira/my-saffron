@@ -17,7 +17,7 @@ interface ProductCardSectionProps {
 
 const ProductCardSection = ({ products }: ProductCardSectionProps) => {
     return (
-        <div className="products-grid">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-12">
             {products.map((product) => (
                 <ProductCard key={product.id} {...product} />
             ))}
