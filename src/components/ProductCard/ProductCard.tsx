@@ -39,7 +39,7 @@ const ProductCard = ({ image, title, price, originalPrice, rating, description, 
             rating={rating}
           />
 
-          <div className="product-footer">
+          <div className="flex flex-col items-center md:flex-row md:justify-between">
             <ProductPrice
               price={price}
               originalPrice={originalPrice}

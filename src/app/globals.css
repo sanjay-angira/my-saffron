@@ -469,12 +469,12 @@ body {
   margin-left: 0.5rem;
 }
 
-.product-footer {
+/* .product-footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-top: auto;
-}
+} */
 
 .product-price {
   display: flex;
