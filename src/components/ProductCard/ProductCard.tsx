@@ -26,7 +26,7 @@ const ProductCard = ({ image, title, price, originalPrice, rating, description, 
           title={title}
         />
 
-        <div className="product-content">
+        <div className="flex flex-col gap-2 p-5 h-full md:p-7">
           <ProductTitle
             title={title}
           />
