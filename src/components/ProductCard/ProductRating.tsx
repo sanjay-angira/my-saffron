@@ -14,6 +14,8 @@ const ProductRating = ({ rating}: ProductCardProps) => {
                     className="star"
                     size={16}
                     style={{
+                        width: 12,
+                        height: 12,
                         color: i < rating ? 'var(--saffron-primary)' : '#ccc',
                         fill: i < rating ? 'var(--saffron-primary)' : 'none'
                     }}

@@ -1,3 +1,6 @@
+import { formatPrice } from "../utilis/utiliti";
+
+
 interface ProductPriceProps {
     price: string;
     originalPrice?: string;
@@ -6,9 +9,9 @@ interface ProductPriceProps {
 const ProductPrice = ({ price, originalPrice }: ProductPriceProps) => {
     return (
         <div className="product-price">
-            <span className="price-current">₹{price}</span>
+            <span className="price-current">{formatPrice(price)}</span>
             {originalPrice && (
-                <span className="price-original">₹{originalPrice}</span>
+                <span className="price-original">{formatPrice(originalPrice)}</span>
             )}
         </div>
     );

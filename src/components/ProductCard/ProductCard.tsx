@@ -26,14 +26,14 @@ const ProductCard = ({ image, title, price, originalPrice, rating, description, 
           title={title}
         />
 
-        <div className="flex flex-col gap-2 p-3 h-full md:p-7">
+        <div className="flex flex-col gap-1 p-3 lg:p-5">
           <ProductTitle
             title={title}
           />
 
-          <ProductDescription
+          {/* <ProductDescription
             description={description}
-          />
+          /> */}
 
           <ProductRating
             rating={rating}
