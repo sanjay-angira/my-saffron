@@ -106,11 +106,11 @@ export default function ProductDetailPage({ params }: PageProps) {
       }
       <ReviewSection productId={params.id} />
 
-      {related.length > 0 && (
+      {/* {related.length > 0 && (
         <div style={{ marginTop: "3rem" }}>
           <ProductSection title="Related Products" products={related} />
         </div>
-      )}
+      )} */}
     </div>
   );
 }
