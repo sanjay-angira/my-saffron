@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import ProductCard from "@/components/ProductCard/ProductCard";
+import ProductCard from "@/components/ProductCardComponents/ProductCard";
 import { PRODUCTS } from "@/data/products";
 
 const CATEGORIES = [

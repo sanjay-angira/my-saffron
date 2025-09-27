@@ -3,7 +3,7 @@ import { Star, ShoppingCart } from "lucide-react";
 import { getProductById, PRODUCTS } from "@/data/products";
 import Accordion, { type AccordionItem } from "@/components/Accordion";
 import ReviewSection from "@/components/ReviewSection";
-import ProductSection from "@/components/utilis/ProductSection";
+import ProductSection from "@/components/ProductSection/Section";
 import ProductImageGallery from "@/components/utilis/ProductImageGallery";
 import rudrakshaImg from "@/assets/rudraksha-collection.jpg";
 import sweetsImg from "@/assets/spiritual-sweets.jpg";

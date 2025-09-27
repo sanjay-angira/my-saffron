@@ -1,15 +1,22 @@
-import ProductCard from "@/components/ProductCard/ProductCard";
-import ProductSectionHeading from "./ProductSectionTopHeadings";
+import ProductCard from "@/components/ProductCardComponents/ProductCard";
+import ProductSectionHeading from "./ProductSectionHeadings";
 import ProductCardSection from "./ProductCardSection";
 
-interface Product {
+export interface Product {
   id: string;
+  name: string;
+  description: string;
+  price: number;
+  originalPrice?: number;
   image: any;
-  title: string;
-  price: string;
-  originalPrice?: string;
+  category: string;
   rating: number;
-  description?: string;
+  reviewCount: number;
+  inStock: boolean;
+  isNew?: boolean;
+  isFeatured?: boolean;
+  tags?: string[];
+  benefits?: string[];
 }
 
 interface ProductSectionProps {
@@ -19,7 +26,7 @@ interface ProductSectionProps {
   viewAllLink?: string;
 }
 
-const ProductSection = ({ title, subtitle, products, viewAllLink }: ProductSectionProps) => {
+const Section = ({ title, subtitle, products, viewAllLink }: ProductSectionProps) => {
   return (
     <section className="products-section">
       <div className="container">
@@ -31,7 +38,7 @@ const ProductSection = ({ title, subtitle, products, viewAllLink }: ProductSecti
           products={products}
         />
         {viewAllLink && (
-          <div className="text-center">
+          <div className="text-center mt-10">
             <button className="btn btn-outline btn-lg">
               View All {title}
             </button>
@@ -42,4 +49,4 @@ const ProductSection = ({ title, subtitle, products, viewAllLink }: ProductSecti
   );
 };
 
-export default ProductSection;
+export default Section;

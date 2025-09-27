@@ -1,6 +1,6 @@
 
 import Link from "next/link";
-import Button from "../utilis/Button";
+import Button from "./Button";
 import ProductPrice from "./ProductPrice";
 import ProductRating from "./ProductRating";
 import ProductTitle from "./ProductTitle";
